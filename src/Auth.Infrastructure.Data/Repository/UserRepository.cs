@@ -10,8 +10,8 @@ public class UserRepository : IUserRepository
     public UserRepository()
     {
         _users = new List<User>();
-        _users.Add(new User { Id = 1, Username = "guilhermemendes", Password = "fkp12q@", Role = "manager" });
-        _users.Add(new User { Id = 2, Username = "leticiamendes", Password = "fkp12q@", Role = "employee" });
+        _users.Add(new User { Id = 1, Username = "manager", Password = "passw@rd", Role = "manager" });
+        _users.Add(new User { Id = 2, Username = "employee", Password = "passw@rd", Role = "employee" });
     }
 
     public async Task<User> Get(string username, string password)

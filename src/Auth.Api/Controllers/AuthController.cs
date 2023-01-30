@@ -1,9 +1,9 @@
+namespace Auth.Api.Controllers;
+
 using Auth.Domain.User.Models;
 using Auth.Domain.User.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
-namespace Auth.Api.Controllers;
 
 [ApiController]
 [Route("v1/auth")]
@@ -29,5 +29,5 @@ public class AuthController : ControllerBase
     [HttpGet]
     [Authorize]
     [Route("authenticated")]
-    public string Authenticated() => String.Format("Autenticado - {0}", User?.Identity?.Name);
+    public string Authenticated() => String.Format("Authenticated - {0}", User?.Identity?.Name);
 }

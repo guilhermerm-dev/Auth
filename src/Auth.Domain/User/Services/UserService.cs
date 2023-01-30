@@ -19,13 +19,7 @@ public class UserService : IUserService
     public async Task<AccessToken> AuthenticateUser(User userData)
     {
         User user = await _userRepository.Get(userData.Username, userData.Password);
-
-        if (user is not null)
-        {
-            AccessToken acessToken = _tokenService.GenerateToken(user);
-            return acessToken;
-        }
-
-        throw new Exception("User not found!");
+        AccessToken acessToken = _tokenService.GenerateToken(user);
+        return acessToken;
     }
 }
